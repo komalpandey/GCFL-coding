@@ -1,0 +1,24 @@
+public class Main{
+
+    public static void main(String[] args){
+        String str="xyz";
+        print(str);
+    }
+    static void printsub(String str,int n,int index,String curr){
+        if(index==n){
+            return;
+        }
+        System.out.println(curr);
+        for(int i=index+1;i<n;i++){
+            curr+=str.charAt(i);
+            printsub(str,n,i,curr);
+            curr=curr.substring(0,curr.length()-1);
+        }
+    }
+    static void print(String str){
+        int index=-1;
+        String curr="";
+        printsub(str,str.length(),index,curr);
+   
+}
+}
